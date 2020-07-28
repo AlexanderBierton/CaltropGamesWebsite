@@ -1,0 +1,199 @@
+/***** BlockStart: General Shit *****/
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+body {
+  font-family: Lato;
+}
+
+/***** BlockEnd: General Shit *****/
+
+/***** BlockStart: NavBar *****/
+nav.navbar {
+  /*border-bottom: 2px solid #7D7D7D;*/
+  height: 70px;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  z-index: 5;
+  font-size: 20px;
+  transition: height .2s ease, background .2s ease, font-size .2s ease;
+}
+
+nav.navbar:after {
+  content: ' ';
+  width: 0;
+  opacity 0;
+  position: absolute;
+  height: 3px;
+  border-bottom: 3px solid #444;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: width .3s ease, opacity .2s ease;
+}
+
+nav.navbar.is-scrolled {
+  background: #FFF;
+  height: 50px;
+  font-size: 18px;
+  padding-bottom: 4px;
+}
+
+nav.navbar.is-scrolled:after {
+  opacity: 1;
+  width: 100%;
+}
+
+.nav-content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex: 50%;
+}
+
+.logo-section {
+  height: 100%;
+  margin: 0 10px;
+}
+
+.logo-section, .title-section {
+  cursor: pointer;
+   margin: 0 10px
+}
+
+.title-section h2 {
+  top: 50%;
+  bottom: 50%;
+  position: relative;
+  transform: translate(0, -50%);
+  font-size: 1.3em;
+}
+
+.nav-content .logo-section img{
+  height: 100%;
+  position: relative;
+  width: auto
+}
+
+.nav-controls {
+  display: flex;
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.nav-controls .nav-item {
+  font-size: 1em;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+}
+
+.nav-controls .nav-item a {
+  padding: 0 1vw;
+  display: block;
+  margin: auto;
+}
+
+.nav-controls .nav-item:after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  border-bottom: 3px solid #444;
+  width: 0;
+  margin: auto;
+  opacity: 0;
+  transition: width ease .5s, opacity ease .5s, bottom ease .3s;
+}
+
+.nav-controls .nav-item:hover:after {
+  width: 100%;
+  opacity: 1;
+  bottom: 0;
+}
+
+/***** BlockEnd: NavBar *****/
+
+/***** BlockStart: Cover Image *****/
+.cover-image {
+  position: relative;
+  height: 600px;
+}
+.cover-image img {
+  height: 100%;
+}
+
+.cover-image .image-item {
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.cover-image .image-item .disclaimer,
+.info-image .placeholder {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px 20px;
+  font-size: 14px;
+  background: #C4C4C4CC;
+}
+/***** BlockEnd: Cover Image *****/
+
+/***** BlockStart: Welcome Page *****/
+.welcome-message {
+  padding: 10vh 20vw;
+  font-size: 18px;
+  text-align: center;
+}
+
+.information-bars-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.information-bar {
+  flex-grow: 1;
+  display: flex;
+  height: 50vh;
+  padding: 20px;
+}
+
+.information-bar.is-coloured {
+  background-color: #3A4E8E;
+  color: #FFF;
+}
+
+.information-bar .text-section,
+.information-bar .image-section {
+  flex: 1;
+}
+
+.information-bar .text-section {
+  margin: auto 0;
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+  opacity: 0;
+  padding-top: 100px;
+  transition: padding ease .5s, opacity ease .5s;
+}
+
+.information-bar.visible .text-section {
+  opacity: 1;
+  padding-top: 20px;
+}
+
+.information-bar .info-image {
+  height: 100%;
+  background-size: cover;
+  position: relative;
+}
