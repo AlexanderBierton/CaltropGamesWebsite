@@ -1,22 +1,32 @@
 var allBlocksVisible = false;
 
 $(function() {
-	var navbar = $("#navbar");
-	$(window).scroll(function(){
-		if (window.pageYOffset > 5)
-		{
-  			if(!navbar.hasClass('is-scrolled'))
-  				navbar.addClass('is-scrolled');
-		}
-		else
-			navbar.removeClass('is-scrolled');
+	handleBannerImageScroll();
+    /*$(".loading-cover").delay(1800).animate({
+        opacity: '0'
+    }, { 
+        complete: function() {
+            $(".loading-cover").hide();
+        }
+    });*/
+});
 
-		
-		if(!allBlocksVisible)
-			checkInfoBlocks();
-		
-	});
-})
+$(window).scroll(function(){
+	var navbar = $("#navbar");
+	if (window.pageYOffset > 5)
+	{
+			if(!navbar.hasClass('is-scrolled'))
+				navbar.addClass('is-scrolled');
+	}
+	else
+		navbar.removeClass('is-scrolled');
+
+	
+	if(!allBlocksVisible)
+		checkInfoBlocks();
+	
+	handleBannerImageScroll();
+});
 
 function checkInfoBlocks()
 {
@@ -25,16 +35,21 @@ function checkInfoBlocks()
 	var infoBar3 = $('#infoBar3');
 	var infoBar4 = $('#infoBar4');
 
-	if(isElementInView(infoBar1) && !infoBar1.hasClass('visible'))
+	if (infoBar1.hasClass('visible') && infoBar2.hasClass('visible') && infoBar3.hasClass('visible') && infoBar4.hasClass('visible'))
+	{
+		allBlocksVisible = true;
+		return false;
+	}
+
+	if (isElementInView(infoBar1) && !infoBar1.hasClass('visible'))
 			setDataAsVisible(infoBar1);
-	if(isElementInView(infoBar2) && !infoBar2.hasClass('visible'))
+	if (isElementInView(infoBar2) && !infoBar2.hasClass('visible'))
 			setDataAsVisible(infoBar2);
-	if(isElementInView(infoBar3) && !infoBar3.hasClass('visible'))
+	if (isElementInView(infoBar3) && !infoBar3.hasClass('visible'))
 			setDataAsVisible(infoBar3);
-	if(isElementInView(infoBar4) && !infoBar4.hasClass('visible'))
+	if (isElementInView(infoBar4) && !infoBar4.hasClass('visible'))
 			setDataAsVisible(infoBar4);
 }
-
 
 function isElementInView(elem)
 {
@@ -55,9 +70,27 @@ function setDataAsVisible(elem)
 	if(elem.length == 0 || elem.hasClass('visible'))
 			return false;
 
-	console.log('addedClass');
-
-
-
 	elem.addClass('visible');
+}
+
+function handleBannerImageScroll() 
+{
+	var coverImage = $('#image1');
+	var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+    
+    var imageSrc = coverImage.css('backgroundImage').replace(/url\((['"])?(.*?)\1\)/gi, '$2').split(',')[0];   
+    var image = new Image();
+    
+    image.src = imageSrc;
+    var height = image.height;
+    var calcHeight = (height - coverImage.height()) / 2; 
+
+    // aspectRatio = oldWidth / oldHeight
+    var aspectRatio = image.width / image.height;
+    // newHeight = newWidth / aspectRatio
+    var newHeight = Math.round(coverImage.width() / aspectRatio);
+
+    var posY = 0 - (newHeight - coverImage.height()) / 2;
+    coverImage.css('background-position-y', posY + (docViewTop / 4) + 'px');
 }
