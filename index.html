@@ -1,19 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="description" content="">
+	<meta name="author" content="">
 	<title>BBG Website</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="css/animations.css">
 	<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
 	<script type="text/javascript" src="js/utils.js"></script>
 </head>
 <body>
+	<!-- Loading Area -->
 	<div class="loading-cover">
 		<div class="loading-content">
-			<div class="loading-animation"></div>
+			<div class="loading-animation">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
 			<span class="loading-text">Loading</span>
 		</div>
 	</div>
+	<!-- Navbar Area -->
 	<nav id="navbar" class="navbar">
 		<div class="nav-content left">
 			<div class="logo-section">
@@ -26,20 +39,21 @@
 		<div class="nav-content right">
 			<div class="nav-controls">
 				<div class="nav-item">
-					<a>Home</a>
+					<a href="index.html">Home</a>
 				</div>
 				<div class="nav-item">
-					<a>Games</a>
+					<a href="pages/games.html">Games</a>
 				</div>
 				<div class="nav-item">
-					<a>Meet the Team</a>
+					<a href="pages/meet.html">Meet the Team</a>
 				</div>
 				<div class="nav-item">
-					<a>News Blog</a>
+					<a href="pages/news.html">News Blog</a>
 				</div>
 			</div>
 		</div>
 	</nav>
+	<!-- Page Content Area -->
 	<content class="page-content">
 		<div class="cover-image">
 			<div class="image-item" id="image1" style="background-image:url('images/large_image_1.jpg')">

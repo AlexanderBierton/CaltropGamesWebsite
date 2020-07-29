@@ -2,21 +2,28 @@ var allBlocksVisible = false;
 
 $(function() {
 	handleBannerImageScroll();
-    /*$(".loading-cover").delay(1800).animate({
+    $(".loading-cover").delay(1800).animate({
         opacity: '0'
     }, { 
         complete: function() {
             $(".loading-cover").hide();
         }
-    });*/
+    });
+});
+
+window.addEventListener("beforeunload", function(event) { 
+	$(".loading-cover").css('display', 'block');
+	$(".loading-cover").animate({
+		opacity: '1'
+	});
 });
 
 $(window).scroll(function(){
 	var navbar = $("#navbar");
 	if (window.pageYOffset > 5)
 	{
-			if(!navbar.hasClass('is-scrolled'))
-				navbar.addClass('is-scrolled');
+		if(!navbar.hasClass('is-scrolled'))
+			navbar.addClass('is-scrolled');
 	}
 	else
 		navbar.removeClass('is-scrolled');
@@ -76,6 +83,9 @@ function setDataAsVisible(elem)
 function handleBannerImageScroll() 
 {
 	var coverImage = $('#image1');
+	if (coverImage.length == 0)
+		return false; 
+	
 	var docViewTop = $(window).scrollTop();
     var docViewBottom = docViewTop + $(window).height();
     
