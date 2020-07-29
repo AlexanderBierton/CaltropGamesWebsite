@@ -2,6 +2,7 @@ var allBlocksVisible = false;
 
 $(function() {
 	handleBannerImageScroll();
+	//$(".loading-animation .loading-icon").delay(500).addClass("is-leaving");
     $(".loading-cover").delay(1800).animate({
         opacity: '0'
     }, { 

@@ -38,31 +38,43 @@ body {
   left: 0;
   right: 0;
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 .loading-animation span {
   content: ' ';
-  /*! width: 70%; */
-  /*! height: 70%; */
-  display: block;
-  margin: auto;
-  top: 50%;
-  left: 50%;
-  background: #3A4E8E;
+  width: 100%;
+  height: 100%;
+  border: 3px solid black;
+  border-bottom: none;
+  border-right: none;
   position: absolute;
-  transform: translate(-50%, -50%);
+  left: 0%;
+  top: 0%;
   border-radius: 50%;
-  animation: loading 2s linear infinite;
+  animation: loading-spin 1.5s ease-in-out infinite;
 }
 
-.loading-animation span:nth-of-type(1) {
-  animation-delay: .6666666s;
+.loading-animation .loading-icon {
+  background: url("../images/logo_altered.png");
+  width: 60%;
+  height: 60%;
+  background-size: cover;
+  background-position: center;
+  z-index: 5;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
 }
 
-.loading-animation span:nth-of-type(2) {
-  animation-delay: 1.222222s;
+.loading-animation .loading-icon.is-leaving {
+  animation: icon-leaving .7s forwards;
 }
 
+.loading-content .loading-text {
+  padding-top: 20px;
+}
 /***** BlockEnd: Loading Area *****/
 
 /***** BlockStart: NavBar *****/
@@ -223,7 +235,7 @@ nav.navbar.is-scrolled:after {
   flex-grow: 1;
   display: flex;
   height: 50vh;
-  padding: 20px;
+  /*! padding: 20px; */
 }
 
 .information-bar.is-coloured {
@@ -238,7 +250,7 @@ nav.navbar.is-scrolled:after {
 
 .information-bar .text-section {
   margin: auto 0;
-  padding: 20px;
+  padding: 20px 0;
   text-align: center;
   font-size: 24px;
   opacity: 0;
