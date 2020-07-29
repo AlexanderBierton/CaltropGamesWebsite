@@ -79,11 +79,12 @@ body {
 
 /***** BlockStart: NavBar *****/
 nav.navbar {
-  /*border-bottom: 2px solid #7D7D7D;*/
+  background: #FFFFFF85;
   height: 70px;
   overflow: hidden;
   position: fixed;
   width: 100%;
+  backdrop-filter: blur(15px);
   top: 0;
   display: flex;
   z-index: 5;
@@ -159,15 +160,23 @@ nav.navbar.is-scrolled:after {
   font-size: 1em;
   position: relative;
   cursor: pointer;
+  line-height: 65px;
   display: flex;
+}
+
+.navbar.is-scrolled .nav-item {
+  line-height: 50px;
 }
 
 .nav-controls .nav-item a {
   padding: 0 1vw;
   display: block;
   margin: auto;
+  height: 100%;
   text-decoration: none;
   color: #000;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .nav-controls .nav-item:after {
@@ -209,13 +218,15 @@ nav.navbar.is-scrolled:after {
 }
 
 .cover-image .image-item .disclaimer,
-.info-image .placeholder {
+.info-image .placeholder,
+.news-image .disclaimer {
   position: absolute;
   bottom: 0;
   right: 0;
   padding: 10px 20px;
   font-size: 14px;
   background: #C4C4C4CC;
+  color: #000;
 }
 /***** BlockEnd: Cover Image *****/
 
@@ -269,3 +280,46 @@ nav.navbar.is-scrolled:after {
   position: relative;
   background-repeat: no-repeat;
 }
+
+/***** BlockEnd: Welcome Page *****/
+
+/***** BlockStart: News *****/
+.news-container {
+  display: flex;
+  margin: 50px auto 0;
+  width: 70%;
+  text-decoration: none;
+}
+.news-item {
+  width: 100%;
+  height: 200px;
+  padding: 0px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  background: #6c6c6c;
+  box-shadow: #000 13px 18px 31px -1px;
+}
+.news-image#newsImage1 {
+  background: url("../images/news-item-1.jpg");
+  width: 30%;
+  height: 100%;
+  background-size: cover;
+  display: block;
+  position: relative;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.news-summary {
+  width: 70%;
+  padding: 20px;
+  color: #FFF;
+}
+.summary-subtitle {
+  font-size: 1.2em;
+  margin-top: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+/***** BlockEnd: News *****/
