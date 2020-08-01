@@ -17,6 +17,7 @@ body {
   width: 100%;
   background: #FFF;
   z-index: 10;
+  top: 0;
 }
 
 .loading-content {
@@ -230,6 +231,14 @@ nav.navbar.is-scrolled:after {
 }
 /***** BlockEnd: Cover Image *****/
 
+/***** BlockStart: Page Content *****/
+.page-content.no-cover {
+  position: relative;
+  display: block;
+  margin-top: 80px;
+}
+/***** BlockEnd: Page Content *****/
+
 /***** BlockStart: Welcome Page *****/
 .welcome-message {
   padding: 10vh 20vw;
@@ -298,8 +307,8 @@ nav.navbar.is-scrolled:after {
   margin-bottom: 40px;
   display: flex;
   flex-direction: row;
-  background: #6c6c6c;
-  box-shadow: #000 13px 18px 31px -1px;
+  background: #8599b3;
+  box-shadow: #000 13px 16px 10px -5px;
 }
 .news-image#newsImage1 {
   background: url("../images/news-item-1.jpg");
