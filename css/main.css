@@ -7,6 +7,11 @@ body {
   font-family: Lato;
 }
 
+a {
+  text-decoration: none;
+  color: #000;
+}
+
 /***** BlockEnd: General Shit *****/
 
 /***** BlockStart: Loading Area *****/
@@ -232,10 +237,54 @@ nav.navbar.is-scrolled:after {
 /***** BlockEnd: Cover Image *****/
 
 /***** BlockStart: Page Content *****/
-.page-content.no-cover {
+.page-content {
   position: relative;
   display: block;
+  margin: 0 auto;
+}
+
+.page-content.no-cover {
   margin-top: 80px;
+}
+
+.page-content.has-fixed-left {
+  padding-left: 10%;
+}
+
+.page-content .right-section {
+  top: 50%;
+  position: fixed;
+  left: 5%;
+  font-size: 3em;
+  transform: translate(-50%, -40%);
+}
+
+.right-section .social-item {
+  margin-bottom: 100%;
+}
+
+.social-media-section .social-item {
+  display: block;
+}
+
+.facebook {
+  color: #0f90f3;
+}
+
+.linkedin {
+  color: rgb(0, 119, 181);
+}
+
+.googleplus {
+  color: rgb(221, 81, 68);
+}
+
+.twitter {
+  color: rgb(29, 161, 242);
+}
+
+.youtube {
+  color: #f00;
 }
 /***** BlockEnd: Page Content *****/
 
@@ -296,34 +345,45 @@ nav.navbar.is-scrolled:after {
 .news-container {
   display: flex;
   margin: 50px auto 0;
-  width: 70%;
   text-decoration: none;
+  flex-direction: column;
 }
 .news-item {
   width: 100%;
-  height: 200px;
+  height: 250px;
   padding: 0px;
-  border-radius: 20px;
   margin-bottom: 40px;
   display: flex;
   flex-direction: row;
-  background: #8599b3;
-  box-shadow: #000 13px 16px 10px -5px;
+  background: #f7f7f7;
 }
-.news-image#newsImage1 {
-  background: url("../images/news-item-1.jpg");
+.news-image {
   width: 30%;
   height: 100%;
   background-size: cover;
   display: block;
   position: relative;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
 }
+.news-image#newsImage1 {
+  background-image: url("../images/news-item-1.jpg");
+}
+.news-image#newsImage2 {
+  background-image: url('../images/info-image-2.jpg');
+}
+.news-image#newsImage3 {
+  background-image: url('../images/info-image-1.jpg')
+}
+.news-image#newsImage4 {
+  background-image: url('../images/info-image-3.jpg');
+}
+.news-image#newsImage5 {
+  background-image: url('../images/info-image-4.jpg');
+}
+
 .news-summary {
   width: 70%;
   padding: 20px;
-  color: #FFF;
+  color: #000;
 }
 .summary-subtitle {
   font-size: 1.2em;
