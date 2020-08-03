@@ -1,8 +1,7 @@
 var allBlocksVisible = false;
-
+var parallax = null;
 $(function() {
-	handleBannerImageScroll();
-	//$(".loading-animation .loading-icon").delay(500).addClass("is-leaving");
+	parallax = new ParallaxItem($("#image1"));
     $(".loading-cover").delay(1800).animate({
         opacity: '0'
     }, { 
@@ -33,7 +32,7 @@ $(window).scroll(function(){
 	if(!allBlocksVisible)
 		checkInfoBlocks();
 	
-	handleBannerImageScroll();
+	//handleBannerImageScroll();
 });
 
 function checkInfoBlocks()
@@ -83,7 +82,7 @@ function setDataAsVisible(elem)
 
 function handleBannerImageScroll() 
 {
-	var coverImage = $('#image1');
+	/*var coverImage = $('#image1');
 	if (coverImage.length == 0)
 		return false; 
 	
@@ -103,5 +102,5 @@ function handleBannerImageScroll()
     var newHeight = Math.round(coverImage.width() / aspectRatio);
 
     var posY = 0 - (newHeight - coverImage.height()) / 2;
-    coverImage.css('background-position-y', posY + (docViewTop / 4) + 'px');
+    coverImage.css('background-position-y', posY + (docViewTop / 4) + 'px');*/
 }
