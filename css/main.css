@@ -5,6 +5,7 @@ html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, tex
 }
 body {
   font-family: Lato;
+  background-color: #f4f4f4;
 }
 
 a {
@@ -392,3 +393,64 @@ nav.navbar.is-scrolled:after {
   text-decoration: none;
 }
 /***** BlockEnd: News *****/
+
+/***** BlockStart: Grid *****/
+
+.grid-layout {
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.grid-item {
+  width: 400px;
+  overflow: hidden;
+  height: auto;
+  margin: 10px 20px;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: #d5d5d5 10px 14px 17px;
+  background: #FFF;
+  cursor: pointer;
+}
+.grid-item:after {
+  content: '\f065';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 25px;
+}
+.grid-item:hover:after {
+  color: #EAEAEA;
+}
+.grid-thumbnail img {
+  max-width: 100%;
+}
+.grid-content {
+    padding: 20px;
+}
+.grid-content div {
+  margin-bottom: 15px;
+}
+.grid-content .title {
+  font-size: 1.5em;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  text-overflow: ellipsis;
+}
+.grid-content .price {
+  font-size: 1.1em;
+  color: #777;
+}
+.grid-content .price .vat {
+  font-size: .7em;
+  font-style: italic;
+}
+.grid-item .info {
+  font-size: 1.1em;
+}
